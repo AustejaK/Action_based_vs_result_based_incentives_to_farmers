@@ -1,0 +1,79 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"> Parte 3</h5>
+        </div>
+        <div class="card-body">
+            <p class="justify">5. Ora vorremmo conoscere le sue opinioni sull’adozione di <b>nuove tecnologie in
+                agricoltura</b>. Per ciascuna delle seguenti affermazioni, la preghiamo di indicare in che misura è
+                d'accordo o in disaccordo. Ogni voce è accompagnata da quattro categorie di risposta: "Fortemente
+                disaccordo", "Leggermente disaccordo", “Nè in disaccordo nè d’accordo”,
+                 "Leggermente d'accordo" e "Fortemente d'accordo".</p>
+            <table class="table-bordered">
+                <tr align="center">
+                    <td></td>
+                    <td><b>&nbsp;Fortemente disaccordo&nbsp;</b></td>
+                    <td><b>&nbsp;Leggermente disaccordo&nbsp;</b></td>
+                    <td><b>&nbsp;Nè in disaccordo nè d’accordo&nbsp;</b></td>
+                    <td><b>&nbsp;Leggermente d'accordo&nbsp;</b></td>
+                    <td><b>&nbsp;Fortemente d'accordo&nbsp;</b></td>
+                </tr>
+                <tr align="center">
+                    <td>Pareri contrastanti tra esperti su una nuova tecnologia in agricoltura diminuirebbero la mia fiducia negli esperti.</td>
+                    {{ for field in form.ambiguity1 }}
+                    <td>{{field}}</td>
+                    {{ endfor }}
+                </tr>
+                <tr align="center">
+                    <td>Non avrei fiducia in una nuova tecnologia in agricoltura se gli esperti avessero opinioni contrastanti su di essa.</td>
+                    {{ for field in form.ambiguity2 }}
+                    <td>{{field}}</td>
+                    {{ endfor }}
+                </tr>
+                <tr align="center">
+                    <td>Pareri contrastanti tra esperti su una nuova tecnologia in agricoltura mi infastidirebbero.</td>
+                    {{ for field in form.ambiguity3 }}
+                    <td>{{field}}</td>
+                    {{ endfor }}
+                </tr>
+                <tr align="center">
+                    <td>Non avrei paura di provare una nuova tecnologia in agricoltura anche se gli esperti avessero opinioni contrastanti su di essa.</td>
+                    {{ for field in form.ambiguity4 }}
+                    <td>{{field}}</td>
+                    {{ endfor }}
+                </tr>
+                <tr align="center">
+                    <td>Se gli esperti avessero opinioni contrastanti su una nuova tecnologia in agricoltura, sarei comunque disposto a provarla.</td>
+                    {{ for field in form.ambiguity5 }}
+                    <td>{{field}}</td>
+                    {{ endfor }}
+                </tr>
+                <tr align="center">
+                    <td>Eviterei di prendere una decisione su una nuova tecnologia in agricoltura se gli esperti avessero opinioni contrastanti su di essa.</td>
+                    {{ for field in form.ambiguity6 }}
+                    <td>{{field}}</td>
+                    {{ endfor }}
+                </tr>
+            </table>
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}

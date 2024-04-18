@@ -1,0 +1,53 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"> Parte 2</h5>
+        </div>
+        <div class="card-body">
+        <p align="justify">5. Oltre all'allevamento di bestiame da latte, quale altra attività agricola svolge?</p>
+        {{ for field in C.activities }}
+        <label>
+            <input type="checkbox" name="{{ field.name }}" value="1">
+            {{ field.label }}
+        </label><br>
+        {{ endfor }}
+                <div id="other_input" style="display: none;">
+        {{ formfield "attivita_other" }}
+    </div>
+    {{ formfield "foragi" }}
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var q3Select= document.getElementsByName("altro")[0];
+        var otherInput = document.querySelector("#other_input");
+
+        q3Select.addEventListener("change", function () {
+            if (q3Select.value === '1') {
+                otherInput.style.display = 'block';
+            } else {
+                otherInput.style.display = 'none';
+            }
+        });
+    });
+</script>
+{% endblock %}

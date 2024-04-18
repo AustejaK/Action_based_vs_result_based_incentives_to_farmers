@@ -1,0 +1,81 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.card{
+    width: 1200px;
+    height: 80%;
+}
+
+.text-bottom{
+    vertical-align: bottom;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Se seleziona "non acquistare gli oli essenziali"</h5>
+        </div>
+        <div class="card-body">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <td colspan="3" align="center"><b>Scelgo</b></td>
+                </tr>
+                <tr align="center">
+                    <td><b>Di acquistare gli oli essenziali e ricevere un sussidio standard (75%)</b></td>
+                    <td><b>Di acquistare gli oli essenziali e ricevere
+                        {{ if participant.treatment == "RBS"}} un sussidio basato sul risultato
+                        {{ else }} crediti di carbonio {{endif}}</b></td>
+                    <td><b>Di non acquistare gli oli essenziali</b></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr align="center">
+                    <td>
+                        <img class="img-fluid" src= "{{static 'visionary/mpl_ex_6.png' }}" style="height:350px"/>
+                        <div class="alert alert-secondary" role="alert">Il mio reddito sarà pari a <br><b>19,671 €</b> </div>
+
+                    </td>
+                    <td>
+                        <img class="img-fluid-2" src= "{{static 'visionary/mpl_ex_7.png' }}" style="height:350px"/>
+                        <div class="alert alert-secondary" role="alert">Il mio reddito sarà pari a una somma compresa
+                            <br><b>tra 19,762 € e 20,238 €</b></div>
+                    </td>
+                    <td>
+                        <img class="img-fluid-2" src= "{{static 'visionary/mpl_opt_out.png' }}" style="height:350px"/>
+                        <div class="alert alert-secondary" role="alert">Il mio reddito rimanerà <b>20,000 €</b></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center"> <input type="radio" name="styles" id="default2" disabled></td>
+                    <td align="center"> <input type="radio" name="styles" id="default3" disabled></td>
+                    <td align="center" class="bordered"> <img class="img" src= "{{static 'visionary/option.png' }}" style="height:80px"/></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

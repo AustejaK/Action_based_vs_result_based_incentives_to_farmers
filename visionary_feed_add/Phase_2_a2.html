@@ -1,0 +1,61 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Domanda</h5>
+        </div>
+        <div class="card-body">
+        {{ if participant.treatment == "RBS" }}
+        <p align="justify">
+            Se avesse la possibilità di selezionare una combinazione tra il sistema di sussidi standard e il sistema di sussidi basati sui risultati, quale percentuale di ciascun tipo di sussidio preferirebbe utilizzare? Scegli una opzione tra queste.
+        </p>
+        {{ else }}
+        <p align="justify">Se avesse la possibilità di selezionare una combinazione tra il sistema di sussidi standard e il pagamento dalla vendita dei crediti di carbonio, quale percentuale di ciascun tipo di sussidio preferirebbe utilizzare? Scegli una opzione tra queste.</p>
+        {{ endif }}
+<table>
+    {{ for choice in form.opinion_policy_mix }}
+    <tr>
+        <td>{{ choice }}</td>
+        {{ if forloop.counter == 1 }}
+        <td>&nbsp; <b>90%</b> sussidio standard e <b>10%</b> {{ if participant.treatment == "RBS" }} sussidio basato sui risultati {{ else }} pagamento dalla vendita dei crediti di carbonio {{ endif }}</td>
+        {{ elif forloop.counter == 2 }}
+        <td>&nbsp; <b>80%</b> sussidio standard e <b>20%</b> {{ if participant.treatment == "RBS" }} sussidio basato sui risultati {{ else }} pagamento dalla vendita dei crediti di carbonio {{ endif }}</td>
+        {{ elif forloop.counter == 3 }}
+        <td>&nbsp; <b>70%</b> sussidio standard e <b>30%</b> {{ if participant.treatment == "RBS" }} sussidio basato sui risultati {{ else }} pagamento dalla vendita dei crediti di carbonio {{ endif }}</td>
+        {{ elif forloop.counter == 4 }}
+        <td>&nbsp; <b>60%</b> sussidio standard e <b>40%</b> {{ if participant.treatment == "RBS" }} sussidio basato sui risultati {{ else }} pagamento dalla vendita dei crediti di carbonio {{ endif }}</td>
+        {{ elif forloop.counter == 5 }}
+        <td>&nbsp; <b>50%</b> sussidio standard e <b>50%</b> {{ if participant.treatment == "RBS" }} sussidio basato sui risultati {{ else }} pagamento dalla vendita dei crediti di carbonio {{ endif }}</td>
+        {{ elif forloop.counter == 6 }}
+        <td>&nbsp; <b>40%</b> sussidio standard e <b>60%</b> {{ if participant.treatment == "RBS" }} sussidio basato sui risultati {{ else }} pagamento dalla vendita dei crediti di carbonio {{ endif }}</td>
+        {{ elif forloop.counter == 7 }}
+        <td>&nbsp; <b>30%</b> sussidio standard e <b>70%</b> {{ if participant.treatment == "RBS" }} sussidio basato sui risultati {{ else }} pagamento dalla vendita dei crediti di carbonio {{ endif }}</td>
+        {{ elif forloop.counter == 8 }}
+        <td>&nbsp; <b>20%</b> sussidio standard e <b>80%</b> {{ if participant.treatment == "RBS" }} sussidio basato sui risultati {{ else }} pagamento dalla vendita dei crediti di carbonio {{ endif }}</td>
+        {{ elif forloop.counter == 9 }}
+        <td>&nbsp; <b>10%</b> sussidio standard e <b>90%</b> {{ if participant.treatment == "RBS" }} sussidio basato sui risultati {{ else }} pagamento dalla vendita dei crediti di carbonio {{ endif }}</td>
+        {{ endif }}
+    </tr>
+    {% endfor %}
+</table>
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

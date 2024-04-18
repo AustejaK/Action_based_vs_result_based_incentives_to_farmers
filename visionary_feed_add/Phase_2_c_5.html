@@ -1,0 +1,95 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+    margin-top: -5%;
+}
+
+.card{
+    width: 1200px;
+    height: 80%;
+}
+
+.text-bottom{
+    vertical-align: bottom;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+}
+
+td {
+  height: 50px;
+  vertical-align: middle;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+<!--            <h5 class="card-title"><b>Fase 2</b></h5>-->
+        </div>
+        <div class="card-body">
+            <p align="justify">Supponiamo, invece, che abbia scelto di “<b>acquistare gli olii essenziali e ricevere
+                una combinazione di un pagamento fisso e {{if participant.treatment == "RBS"}}sussidio basato sui
+                risultati{{else}}pagamento dalla vendita dei crediti di carbonio{{endif}}</b>”.</p>
+
+            <p align="justify">Il suo reddito agricolo finale sarà calcolato come nella fase 1.</p>
+
+        <table class="table">
+            <thead>
+<!--                <tr>-->
+<!--                    <td colspan="3" align="center"><b>Scelgo</b></td>-->
+<!--                </tr>-->
+                <tr align="center">
+                    <td><b>Di acquistare gli oli essenziali e ricevere un combinazione di strumenti</b>
+<!--                    <br> ({{player.policy_mix_1}}% sussidio standard - {{pm}}% {{ if participant.treatment == "RBS" }}sussidio basato sui risultati-->
+<!--                    {{ else }}pagamento dalla vendita dei crediti di carbonio{{endif}})</b></td>-->
+                    <td colspan="2"></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr align="center">
+                    <td>
+                        {{ if player.policy_mix_1 == 40 }}
+                        <img class="img-fluid" src= "{{static 'visionary/pm_40_60.png' }}" style="height:350px"/>
+                        {{ elif player.policy_mix_1 == 60}}
+                        <img class="img-fluid" src= "{{static 'visionary/pm_60_40.png' }}" style="height:350px"/>
+                        {{else}}
+                        <img class="img-fluid" src= "{{static 'visionary/pm_80_20.png' }}" style="height:350px"/>
+                        {{endif}}
+                        <div class="alert alert-secondary" role="alert">Il mio reddito sarà pari a una somma compresa
+                            <br><b>tra
+                        {{ if player.policy_mix_1 == 40 }}19,699 € e 19,985 €
+                        {{ elif player.policy_mix_1 == 60 }}19,668 € e 19,858 €
+                        {{ elif player.policy_mix_1 == 80 }}19,637 € e 19,732 €
+                        {{ endif }}</b></div>
+                    </td>
+                    <td colspan="2">
+                        <div class="alert alert-secondary">
+                            <ul>
+                                <li>Per determinare il reddito agricolo finale, simuleremo una delle riduzioni di emissioni di metano usando lo stesso meccanismo mostrato in precedenza.</li><br>
+                                <li>Le ricordiamo che la riduzione delle emissioni di metano può risultare da varie distribuzioni.</li><br>
+<!--                                <li>Non Le diremo quale tra le possibili distribuzioni useremo per determinare la riduzione di emissioni di metano. </li>-->
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

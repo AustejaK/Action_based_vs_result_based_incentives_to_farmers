@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.img-fluid{
+    height: 50%;
+    width: 50%;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"><b>Importante!</b></h5>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li><b>Le ricordiamo che nella Fase 2 Le mostreremo sette schede di scelta in cui esprimere le sue preferenze.</b></li>
+                <br>
+                <li>Se la <b>Fase 2</b> venisse estratta alla fine dello studio in modo casuale, il bonus aggiuntivo verrà determinato come segue:</li>
+            </ul>
+            <div class="alert alert-secondary">
+                <p align="center">Una delle scelte fatte in questa fase viene estratta in modo casuale.</p>
+            </div>
+        </div>
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

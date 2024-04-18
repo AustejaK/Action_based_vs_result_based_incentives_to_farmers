@@ -1,0 +1,61 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.text-bottom{
+    vertical-align: bottom;
+}
+
+
+.img-fluid{
+    width: 35%;
+    height: 35%;
+}
+
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+<!--            <h5 class="card-title">Opzione C - Non Acquisto</h5>-->
+        </div>
+        <div class="card-body">
+            <p align="justify">In questo caso, il reddito della sua azienda alla fine dell'anno sarà pari a <b>20,000 €</b>.</p>
+
+        <table class="table">
+            <thead>
+                <tr align="center">
+                    <td><b>Di non acquistare gli olii essenziali</b></td>
+                    <td colspan="2"></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr align="center">
+                    <td>
+                        <img class="img-fluid-2" src= "{{static 'visionary/mpl_opt_out.png' }}" style="height:100px"/>
+                        <div class="alert alert-secondary" role="alert">Il mio reddito rimarrà <b>20,000 €</b></div>
+                    </td>
+                    <td colspan="2">
+                        <img class="img-fluid" src= "{{static 'visionary/mpl_ex_option_c.png' }}"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

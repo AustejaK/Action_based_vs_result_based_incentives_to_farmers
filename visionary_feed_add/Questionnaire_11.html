@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+}
+
+.td-table {
+  width: 200px;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"> Parte 6</h5>
+        </div>
+        <div class="card-body">
+            <p align="center"><b>Le chiediamo di rispondere cortesemente ad un ultimo paio di domande sul reddito aziendale.</b></p>
+            <p align="center"><b>Queste informazioni sono molto importanti per il nostro studio.</b> </p>
+            <p align="center"><b>Le ricordiamo che le risposte sono completamente anonime e non riconducibili alla sua persona.</b></p>
+            {{ formfields }}
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}

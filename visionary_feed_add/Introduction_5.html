@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"><b>Studio 1</b></h5>
+        </div>
+        <div class="card-body">
+            <h5 align="center">Lo studio si compone di due fasi:</h5>
+            <p align="center"><img class="img-fluid-2" src= "{{static 'visionary/study_1.png' }}" style="height:300px;"/></p>
+            <div class="alert alert-secondary" role="alert" align="center">
+                <h5>In entrambe le Fasi, Le chiederemo di esprimere le sue preferenze per l’acquisto e l’utilizzo di
+                    olii essenziali.</h5>
+</div>
+            <p align="center"></p>
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

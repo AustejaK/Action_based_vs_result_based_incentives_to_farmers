@@ -1,0 +1,62 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.alert {
+    display: none;
+}
+
+.alert {
+    display: none;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Studio 2</h5>
+        </div>
+        <div class="card-body">
+            <p align="center">Ha completato 2 fasi nel corso nello Studio 2. </p>
+            <p align="center">Nella Fase 1 Le avevamo chiesto di esprimere le vostre opinioni sulla riduzione delle emissioni di metano.</p>
+            <p align="center">Se la distribuzione di gettoni espressa da Lei <b>corrisponde con buona approssimazione </b> alla distribuzione di gettoni creata da noi, basandosi su dati scientifici e adattata alle previsioni degli esperti, riceverà 15€.</p>
+            <p align="center">Se la distribuzione di gettoni espressa da Lei <b>non corrisponde con buona approssimazione </b> alla distribuzione di gettoni creata da noi, basandosi su dati scientifici e adattata alle previsioni degli esperti, riceverà 0 €.</p>
+            <div align="center">
+                <button id="btn1" type="button"  onclick="showAlert()" style="font-size:20px;border: 2px solid #f44336; border-radius: 12px">CLICCA SUL PULSANTE</button>
+            </div>
+            <br>
+            <div class="alert alert-secondary" id="myAlert">
+                <p align="center">
+                    {{ if player.frequency_payoff == 1 }}
+                    Le distribuzioni corrispondono. Riceve 15 €.
+                    {{ else }}
+                    Le distribuzioni non corrispondono. Riceve 0 €.
+                    {{ endif }}
+                </p>
+                <div align="center">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="card-footer text-right">
+        </div>
+    </div>
+</body>
+
+<script>
+
+    function showAlert() {
+        var alertDiv = document.getElementById("myAlert");
+        alertDiv.style.display = "block";
+    }
+
+
+</script>
+{% endblock %}

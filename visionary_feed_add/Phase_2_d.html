@@ -1,0 +1,70 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.img-fluid{
+    height: 50%;
+    width: 50%;
+}
+
+.table-wrap{
+    width: 50%;
+    margin: auto;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"><b>Fase 2</b></h5>
+        </div>
+        <div class="card-body">
+            <h4 align="center">Facciamo un <b>esempio</b>:</h4>
+            <br>
+        <div class="table-wrap" align="center">
+            <table class="table table-light table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <td colspan="3" align="center">Le chiediamo di scegliere se preferisce:</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="center">
+                        <th scope="col">A</th>
+                        <th scope="col">B</th>
+                        <th scope="col">C</th>
+                    </tr>
+                    <tr align="center">
+                        <td >Acquistare gli olii essenziali e ricevere un sussidio standard</td>
+                        <td >Acquistare gli olii essenziali e ricevere
+                            <u><b>una combinazione di un pagamento fisso e
+                            {{ if participant.treatment == "RBS" }}
+                            sussidio basato sui risultati
+                            {{ else }}
+                            pagamento dalla vendita dei crediti di carbonio
+                            {{ endif }}</b></u>
+                        </td>
+                        <td style="background-color: yellow;">Non acquistare gli olii essenziali</td>
+                    </tr>
+                </tbody>
+            </table>
+            <img class="img" src= "{{static 'visionary/you_chose_3.png' }}" alt="Arrow Image" style="position: absolute; top: 60%; right: 5px; transform: translateY(-50%); width: 20%; height: auto;">
+
+        </div>
+
+        </div>
+
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

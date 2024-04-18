@@ -1,0 +1,73 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.img-fluid{
+    height: 50%;
+    width: 50%;
+}
+
+.img-fluid-2{
+    height: 80%;
+    width: 80%;
+}
+
+.img-fluid-3{
+    height: 50%;
+    width: 50%;
+}
+
+.fixed-width{
+    width: 55%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+<!--            <h5 class="card-title">Opzione B - -->
+<!--                {{ if participant.treatment == "RBS" }}-->
+<!--                Acquisto e sussidio basato sui risultati-->
+<!--                {{ else }}-->
+<!--                Acquisto e credito di carbonio-->
+<!--                {{ endif }}-->
+<!--            </h5>-->
+        </div>
+
+        <div class="card-body">
+            <p align="justify">In questo caso, è più probabile che la riduzione corrispondente ad <b>A</b> si verifichi.
+                In questo caso, Lei riceverebbe <b>1,077 €</b> e il suo reddito agricolo finale sarebbe pari a <b>19,762€</b>.</p>
+
+
+        <table>
+            <tr>
+                <td class="fixed-width">
+                     <p align="center"><img class="img-fluid" src= "{{static 'visionary/distribution_2.png' }}"/></p>
+                </td>
+                <td>
+                    {{ if participant.treatment == "RBS" }}
+                    <img class="img-fluid-2" src= "{{static 'visionary/distribution_2_rbs.png' }}"/>
+                    {{ else }}
+                    <img class="img-fluid-2" src= "{{static 'visionary/distribution_2_cc.png' }}"/>
+                    {{ endif }}
+                </td>
+            </tr>
+        </table>
+
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

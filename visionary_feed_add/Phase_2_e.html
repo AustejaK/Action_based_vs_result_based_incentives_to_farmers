@@ -1,0 +1,39 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.img-fluid{
+    height: 50%;
+    width: 50%;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"><b>Fase 2</b></h5>
+        </div>
+        <div class="card-body">
+            <p align="justify">Nella Fase 2, Le mostreremo <b>sette schede di scelta</b>.</p>
+
+            <p align="justify">Come nell’attività precedente, il livello di sussidio standard <b>aumenterà</b>,
+                di scelta in scelta, dal 75% al 120% per coprire i costi di acquisto e utilizzo degli oli essenziali.</p>
+
+            <p align="justify">Invece, i pagamenti dalla combinazione di strumenti rimarranno <b>invariati.</p>
+        </div>
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+
+</body>
+
+{% endblock %}

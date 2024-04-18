@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Domanda</h5>
+        </div>
+        <div class="card-body">
+        <p>Sulla base delle informazioni che avete ascoltato finora, quanto è probabile che Lei accetti di acquistare
+            oli essenziali e di ricevere {{ if participant.treatment == "RBS" }}
+            un sussidio basato sui risultati{{ else }} un pagamento dalla vendita dei crediti di carbonio{{ endif}}, su una scala da 0 a 7?</p>
+            {{ formfields }}
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

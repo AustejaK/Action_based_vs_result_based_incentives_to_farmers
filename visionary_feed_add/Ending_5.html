@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Carta regalo</h5>
+        </div>
+        <div class="card-body">
+            <p align="center">Riceverà una carta regalo di {{payoff}}.</p>
+            <p align="center"> Le invieremo le due carte regalo digitali per il supermercato Poli via email.</p>
+            <p align="center">Si può uscire dall'esperimento.</p>
+                <div class="alert alert-info" role="alert">
+                    <p align="center">Questa è la distribuzione basata sulla letteratura e sulle previsioni degli esperti:</p>
+                    <p align="center"><img class="img-fluid-2" src= "{{static 'visionary/distribution_real.png' }}"/></p>
+                </div>
+            <h5 align="center">Grazie!</h5>
+        </div>
+        </div>
+        <div class="card-footer text-right">
+
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}

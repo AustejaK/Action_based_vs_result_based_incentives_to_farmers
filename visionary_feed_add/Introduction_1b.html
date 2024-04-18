@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"> Introduzione</h5>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-secondary" role="alert">
+            <ul <p align="justify">
+                <li>Il <b>metano</b> (CH<sub>4</sub>)  è un sottoprodotto della fermentazione enterica dei ruminanti.</li>
+            <br>
+                <li>Di recente, molte <b>iniziative</b> sono state lanciate a livello europeo per ridurre le emissioni di metano, anche derivanti dal settore zootecnico.</li>
+            <br>
+                <li>Ad esempio, la lunga discussione sull’inserimento degli allevamenti (>300UBA) nella <b>Direttiva Emissioni Industriali</b>.</li>
+            </ul>
+                </div>
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

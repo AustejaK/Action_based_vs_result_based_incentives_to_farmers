@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.img-fluid{
+    height: 30%;
+    width: 30%;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Sussidio tradizionale</h5>
+        </div>
+        <div class="card-body">
+            <p align="center"><img class="img-fluid" src= "{{static 'visionary/subsidy.png' }}"/></p>
+            <p align="center">Alla fine del periodo di utilizzo degli olii essenziali riceverà una somma di denaro fissa che
+                    copre <b><u>tra il 75% e il 120%</u></b> dei costi totali dell'acquisto e utilizzo degli olii essenziali.</li><br>
+            <p align="center">Il pagamento <b>non dipende</b> dall'effettiva riduzione delle emissioni di metano ottenuta con l'uso
+                    degli olii essenziali.</p>
+            </ul>
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

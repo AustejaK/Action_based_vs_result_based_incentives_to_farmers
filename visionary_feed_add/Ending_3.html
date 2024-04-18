@@ -1,0 +1,128 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.alert {
+    display: none;
+}
+
+.alert {
+    display: none;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Studio 1</h5>
+        </div>
+        <div class="card-body">
+
+            <h5 align="center">Fase {{player.study1phase}}</h5><br>
+            <p align="center">
+                Nella Fase {{player.study1phase}} Le avevamo chiesto di scegliere
+                {{ if player.study1phase == 1 }}
+                se preferiva un sussidio standard o
+                un {{ if participant.treatment == "RBS"}}sussidio basato sui risultati{{else}}pagamento dalla vendita dei
+                crediti di carbonio{{endif}}
+                {{else}}
+                tra un sussidio standard e un mix di due strumenti (un pagamento fisso e un
+                {{ if participant.treatment == "RBS"}}sussidio basato sui risultati{{else}}pagamento dalla vendita dei
+                crediti di carbonio{{endif}})
+                {{endif}}
+
+            </p>
+            <p align="center">Ha fatto 7 scelte. Clicchi sul pulsante qui sotto per estrarne una a caso.</p>
+
+            <div align="center">
+                <button id="btn1" type="button"  onclick="showAlert()" style="font-size:20px;border: 2px solid #f44336; border-radius: 12px">CLICCA SUL PULSANTE</button>
+            </div>
+            <br>
+            <div class="alert alert-secondary" id="myAlert">
+                <h5 align="center">
+                    Ha estratto la scheda di scelta: {{ player.mpl_task }}
+                </h5>
+                <br>
+                <p align="center">
+                {{ if player.option == 1 }}
+                Ha scelto di acquistare oli essenziali e di coprire il {{percentages}}% dei costi con un sussidio standard.
+                <br><br>
+                Il suo reddito agricolo alla fine dell'anno è di {{ player.reddito }} €.
+                <br>
+                Quindi il bonus aggiuntivo sarà pari a: {{ player.payoff_phase_1 }}</p>
+                <div align="center">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+                </div>
+                {{ elif player.option == 2 }}
+                    {{ if player.study1phase == 1 }}
+                Ha scelto di acquistare oli essenziali e di coprire i costi con un
+                    {{ if participant.treatment == "RBS"}}sussidio basato sui risultati{{else}}pagamento dalla
+                    vendita dei crediti di carbonio{{endif}}. Fare clic sul pulsante sottostante
+                    per determinare il livello di riduzione del metano:
+                    {{ else }}
+                    Ha scelto l'opzione: {{player.policy_mix_1}}% dei costi coperti da un sussidio standard e {{policy_mix_2}}% dei costi coperti da un {{ if participant.treatment == "RBS"}}sussidio basato sui risultati{{else}}pagamento dalla
+                    vendita dei crediti di carbonio{{endif}}.
+                    <br><br>
+                    Faccia clic sul pulsante sottostante per determinare il livello di riduzione del metano:
+                    {{ endif }}
+                {{ else }}
+                Aveva scelto di non acquistare oli essenziali. Il vostro reddito agricolo alla fine dell'anno è di
+                {{player.reddito}} €.
+                <br>
+                Quindi il bonus aggiuntivo sarà pari a: {{ player.payoff_phase_1 }}</p>
+                <div align="center">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+                </div>
+                {{ endif }}
+
+
+                </p>
+                {{ if player.option == 2 }}
+                    <div align="center">
+                        <button id="btn2" type="button"  onclick="showAlert2()" style="font-size:20px;border: 2px solid #f44336; border-radius: 12px">CLICCA SUL PULSANTE</button>
+                    </div>
+
+                <div class="alert alert-secondary" id="myAlert2">
+                    <p align="center">
+                        Il metano è stato ridotto di {{methane}} tonnellate, pari a {{methane_payment}} euro. Il reddito dell'azienda agricola alla fine dell'anno è di {{player.reddito}} €.
+                        <br>
+                        Quindi il bonus aggiuntivo sarà pari a: {{ player.payoff_phase_1 }}</p>
+                    </p>
+                <div align="center">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+                </div>
+                </div>
+                {{ endif }}
+
+            </div>
+
+
+        </div>
+        <div class="card-footer text-right">
+
+        </div>
+    </div>
+</body>
+
+<script>
+
+    function showAlert() {
+        var alertDiv = document.getElementById("myAlert");
+        alertDiv.style.display = "block";
+    }
+
+    function showAlert2() {
+        var alertDiv2 = document.getElementById("myAlert2");
+        alertDiv2.style.display = "block";
+    }
+
+</script>
+{% endblock %}

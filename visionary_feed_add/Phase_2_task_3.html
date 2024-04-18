@@ -1,0 +1,100 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+    margin-top: -2.5%;
+}
+
+.text-bottom{
+    vertical-align: bottom;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <p class="card-title">Scheda di scelta 3</p>
+        </div>
+        <div class="card-body">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <td colspan="3" align="center"><b>Scelgo</b></td>
+                </tr>
+                <tr align="center">
+                    <td><b>Di acquistare gli olii essenziali e ricevere un sussidio tradizionale (85%)</b></td>
+                    <td><b>Di acquistare gli olii essenziali e ricevere un combinazione di strumenti</b>
+                    <br> </b>
+
+                        {{ if player.policy_mix_1 == 10 }}
+                        (10% sussidio tradizionale - 90% {{ if participant.treatment == "RBS" }}sussidio basato sui risultati
+                    {{ else }}pagamento dalla vendita dei crediti di carbonio{{endif}})
+                        {{ elif player.policy_mix_1 == 30 }}
+                        (30% sussidio tradizionale - 70% {{ if participant.treatment == "RBS" }}sussidio basato sui risultati
+                    {{ else }}pagamento dalla vendita dei crediti di carbonio{{endif}})
+                        {{ elif player.policy_mix_1 == 50 }}
+                        (50% sussidio tradizionale - 50% {{ if participant.treatment == "RBS" }}sussidio basato sui risultati
+                    {{ else }}pagamento dalla vendita dei crediti di carbonio{{endif}})
+                        {{ endif }}
+
+                    </td>
+                    <td><b>Di non acquistare gli olii essenziali</b></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr align="center">
+
+                    <td>
+                        <img class="img-fluid" src= "{{static 'visionary/pm_ss_85.png' }}" style="height:300px"/>
+                        <div class="alert alert-secondary" role="alert">Il mio reddito sarà pari a <br><b>19,803 €</b> </div>
+
+                    </td>
+                    <td>
+                        {{ if player.policy_mix_1 == 10 }}
+                        <img class="img-fluid-2" src= "{{static 'visionary/pm_10_90_task.png' }}" style="height:300px"/>
+                        {{ elif player.policy_mix_1 == 30 }}
+                        <img class="img-fluid-2" src= "{{static 'visionary/pm_30_70_task.png' }}" style="height:300px"/>
+                        {{ elif player.policy_mix_1 == 50 }}
+                        <img class="img-fluid-2" src= "{{static 'visionary/pm_50_50_task.png' }}" style="height:300px"/>
+                        {{ endif }}
+                        <div class="alert alert-secondary" role="alert">Il mio reddito sarà pari a una somma compresa
+                            <br><b>tra
+                        {{ if player.policy_mix_1 == 10 }}19,746 € e 20,174 €
+                        {{ elif player.policy_mix_1 == 30 }}19,715 € e 20,048 €
+                        {{ elif player.policy_mix_1 == 50 }}19,684 € e 19,921 €
+                        {{ endif }}</b></div>
+                    </td>
+                    <td>
+                        <img class="img-fluid-2" src= "{{static 'visionary/mpl_opt_out.png' }}" style="height:300px"/>
+                        <div class="alert alert-secondary" role="alert">Il mio reddito rimarrà<br> <b>20,000 €</b></div>
+                    </td>
+                </tr>
+                    <tr>
+                        {{ for choice in form.pm1_3 }}
+                        <td align="center">{{ choice }}</td>
+                        {{ endfor }}
+                    </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"> Parte 2</h5>
+        </div>
+        <div class="card-body">
+            {{ formfield "alimentazione" }}
+            <div id="other_input" style="display: none;">
+                {{ formfield "alimentazione_other" }}
+            </div>
+            {{ formfield "razione" }}
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var q3Select= document.getElementById("id_alimentazione-2") ;
+        var otherInput = document.querySelector("#other_input");
+
+        q3Select.addEventListener("change", function () {
+            if (q3Select.value === 'Altro') {
+                otherInput.style.display = 'block';
+            } else {
+                otherInput.style.display = 'none';
+            }
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">La riduzione delle emissioni di metano</h5>
+        </div>
+        <div class="card-body">
+        <ul>
+            <li>L'entità esatta della riduzione di metano è incerta e non può essere stabilita in anticipo. </li><br>
+            <li>Questa <b>riduzione può variare</b> a seconda di diversi fattori, tra cui la dieta degli animali, le
+                loro condizioni di salute e/o le condizioni ambientali:</li><br>
+        </ul>
+
+        <table class="table table-striped table-bordered">
+          <tbody>
+            <tr align="center">
+                <th scope="col">A</th>
+                <th scope="col">B</th>
+                <th scope="col">C</th>
+                <th scope="col">D</th>
+                <th scope="col">E</th>
+                <th scope="col">F</th>
+                <th scope="col">G</th>
+            </tr>
+            <tr align="center">
+                <th scope="col">6.6%, 7%</th>
+                <th scope="col">7.1%, 7.5%</th>
+                <th scope="col">7.6%, 8%</th>
+                <th scope="col">8.1%, 8.5%</th>
+                <th scope="col">8.6%, 9%</th>
+                <th scope="col">9.1%, 9.5%</th>
+                <th scope="col">9.6%, 10%</th>
+            </tr>
+          </tbody>
+        </table>
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.img-fluid{
+    height: 40%;
+    width: 40%;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">
+                {{ if participant.treatment == "RBS" }} Sussidio basato sui risultati {{ else }}
+                Crediti di carbonio {{ endif }} </h5>
+        </div>
+        <div class="card-body">
+            <p align="center"><img class="img-fluid" src= "{{static 'visionary/rb_instrument.png' }}"/></p>
+
+            {{ if participant.treatment == "RBS" }}
+
+            <p align="center">Alla <b>fine dell'anno di utilizzo</b>, senza alcun costo aggiuntivo, il consulente aziendale visiterà
+                    nuovamente l'azienda per calcolare la riduzione delle emissioni di metano avvenuta,
+                    confrontandola con il livello di riferimento delle emissioni.</p>
+
+            <p align="center">Riceverà una <b>somma</b> di denaro per ogni tonnellata di metano ridotta <b>rispetto al livello di riferimento</b>.
+                    Ciò significa che <b>maggiore è la riduzione delle emissioni di metano, maggiore sarà la somma di
+                    denaro ricevuta</b>.</p>
+            </ul>
+
+            {{ else }}
+
+            <p align="center">Alla <b>fine dell'anno di utilizzo</b>, senza alcun costo aggiuntivo, il consulente aziendale visiterà
+                    nuovamente l'azienda per calcolare la riduzione delle emissioni di metano avvenuta,
+                    confrontandola con il livello di riferimento delle emissioni.</p>
+
+            <p align="center">Riceverà una <b>somma</b> di denaro pari al prezzo unitario del credito di carbonio
+                moltiplicato per ogni tonnellata di metano ridotta <b>rispetto al livello di riferimento</b>.
+                    Ciò significa che <b>maggiore è la riduzione delle emissioni di metano,  maggiore è la
+                    quantità di crediti di carbonio generati e, quindi, maggiore sarà la somma di denaro ricevuta.
+</b></p>
+
+            {{ endif }}
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

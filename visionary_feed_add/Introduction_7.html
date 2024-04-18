@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Come viene determinato il bonus aggiuntivo nella Fase 3? </h5>
+        </div>
+        <div class="card-body">
+            <p align="justify">Nella <b>Fase 3</b>, Le chiederemo di fare delle previsioni sull'efficacia degli
+                olii essenziali nel ridurre le emissioni di metano negli allevamenti bovini.</p>
+
+            <p align="justify"> Se la <b>Fase 3</b> venisse estratta in modo casuale alla fine dello studio,
+                potrà ottenere un bonus aggiuntivo da 0 a 15 € sulla base della precisione delle sue previsioni.</p>
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

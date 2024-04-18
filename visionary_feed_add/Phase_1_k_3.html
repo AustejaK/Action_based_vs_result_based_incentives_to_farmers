@@ -1,0 +1,62 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+
+.fixed-width{
+    width: 55%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+<!--            <h5 class="card-title">Opzione B - -->
+<!--                {{ if participant.treatment == "RBS" }}-->
+<!--                Acquisto e sussidio basato sui risultati-->
+<!--                {{ else }}-->
+<!--                Acquisto e credito di carbonio-->
+<!--                {{ endif }}-->
+<!--            </h5>-->
+        </div>
+
+        <div class="card-body">
+            <p align="justify">La riduzione delle emissioni di metano può risultare da <b>varie distribuzioni</b>.</p>
+            <p align="justify">Di seguito, le mostriamo alcuni esempi di queste distribuzioni, ma <b>non Le diremo</b> quale distribuzione useremo in questo studio. </p>
+            <p align="justify">Più la curva è alta, <b>maggiore</b> è la probabilità che la riduzione corrispondente (da A a G) si verifichi. </p>
+            <p align="justify">In questo caso, la riduzione corrispondente a <b>A</b> è la più probabile.</p>
+
+        <p align="center"><img class="img-fluid" src= "{{static 'visionary/distribution_1.png' }}" style="height:400px; width:auto;"/></p>
+
+<!--        <table>-->
+<!--            <tr>-->
+<!--                <td class="fixed-width">-->
+<!--                    <p align="center"><img class="img-fluid" src= "{{static 'visionary/mpl_ex_3b.png' }}"/></p>-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                    {{ if participant.treatment == "RBS" }}-->
+<!--                    <img class="img-fluid-2" src= "{{static 'visionary/mpl_ex_5_rbs.png' }}"/>-->
+<!--                    {{ else }}-->
+<!--                    <img class="img-fluid-2" src= "{{static 'visionary/mpl_ex_5_cc.png' }}"/>-->
+<!--                    {{ endif }}-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </table>-->
+
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

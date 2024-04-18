@@ -1,0 +1,39 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.img-fluid{
+    height: 50%;
+    width: 50%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"></h5>
+        </div>
+        <div class="card-body">
+          <p align="justify">Per esempio, è stato estratto in modo casuale questo biglietto:  </p>
+
+        <p align="center"><img class="img-fluid-2" src= "{{static 'visionary/mpl_ex_10.png' }}"/></p>
+
+            <p align="justify">Pertanto, ipotizziamo che si verificherà una riduzione delle emissioni di metano pari a  9,96 t per vacca da latte, che corrisponde a, 219,12 t di metano per allevamento all'anno.
+</p>
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

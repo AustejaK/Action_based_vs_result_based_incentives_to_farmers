@@ -1,0 +1,51 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+img {
+  border: 3px solid #555;
+}
+
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"><b>Compenso per lo studio 1</b></h5>
+        </div>
+        <div class="card-body">
+            <p align="justify">Come detto in precedenza, Lei riceverà una carta regalo dal valore di <b>10 €</b> per ringraziarla della partecipazione allo Studio 1. </p>
+            <p align="justify">Alla fine dell’incontro, <b>una delle due fasi</b> (Fase 1, Fase 2) dello Studio 1 verrà estratta in modo casuale per determinare il suo bonus aggiuntivo.</p>
+            <div class="alert alert-secondary" role="alert">
+
+            <p align="center"><b>Come viene determinato il bonus aggiuntivo?</b></p>
+
+            <p align="justify">Se la <b>Fase 1</b> venisse estratta in modo casuale alla fine dello studio,
+                estrarremo una delle scelte fatte da Lei in quella determinata fase per calcolare il reddito
+                aziendale da convertire in bonus da <b>0 a 15 €</b>.</p>
+
+            <p align="justify">Il bonus aggiuntivo sulla carta regalo sarà quindi una <i>quota percentuale</i> del reddito
+                aziendale finale così calcolato:</p>
+
+            <p align="center"><img class="img-fluid" src= "{{static 'visionary/formula.png' }}" style="height: 80px;"/></p>
+
+            <p align="justify">Maggiore sarà il suo reddito aziendale, maggiore sarà il bonus aggiuntivo.</p>
+
+            </div>
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

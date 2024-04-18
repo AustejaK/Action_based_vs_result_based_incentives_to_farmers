@@ -1,0 +1,39 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"></h5>
+        </div>
+        <div class="card-body">
+            <p align="justify">A livello aziendale, è possibile gestire le emissioni di metano adottando <b>
+                varie strategie</b>, come ad esempio:</p>
+
+            <div class="alert alert-secondary" role="alert">
+            <ul>
+
+                <li>Piantare colture erbacee in grado di stoccare carbonio nel suolo;</li>
+            <br>
+                <li>Migliorare geneticamente gli animali;</li>
+            <br>
+                <li>Includere l’uso di <b>olii essenziali</b> nella razione giornaliera degli animali;</li>
+            </ul>
+            </div>
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

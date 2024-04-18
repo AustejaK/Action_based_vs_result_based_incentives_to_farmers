@@ -1,0 +1,72 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+    margin-top: -2.5%;
+}
+
+td {
+  height: 50px;
+  vertical-align: middle;
+}
+
+.img-fluid-2{
+    height: 150px;;
+    width: auto;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Facciamo un esempio</h5>
+        </div>
+        <div class="card-body">
+<!--          <p align="justify">Ha la possibilità di acquistare e utilizzare gli oli essenziali per un anno per il suo-->
+<!--              allevamento al costo di 1.315 € (barra grigia).</p>-->
+            <p align="justify">Supponiamo che il sussidio copra l'<b>75%</b> di essi, pari a <b>986 €</b> (barra gialla).
+                In questo caso, il reddito finale della sua azienda alla fine dell'anno sarà
+                pari a <b>19,671 €</b>.</p>
+
+
+            <table class="table">
+            <thead>
+                <tr align="center">
+                    <td><b>Di acquistare gli olii essenziali e ricevere un sussidio tradizionale (75%)</b></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr align="center">
+                    <td>
+                        <img class="img-fluid" src= "{{static 'visionary/mpl_ex_6.png' }}" style="height:350px"/>
+                        <div class="alert alert-secondary" role="alert">Il mio reddito sarà pari a <br><b>19,671 €</b> </div>
+
+                    </td>
+                    <td>
+                        <p align="center"><img class="img img-fluid-2" src= "{{static 'visionary/mpl_ex_8.png' }}"/></p>
+
+                    </td>
+                    <td colspan="2">
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

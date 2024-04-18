@@ -1,0 +1,64 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+    margin-top: -2.5%;
+}
+
+.card {
+    text-indent: 10px; /* Adjust the indent value as needed */
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"> Dichiarazione di consenso</h5>
+        </div>
+        <div class="card-body">
+        <p>Io sottoscritto/a <input name="name"> <br></p>
+        <p>nato/a a <input name="birthplace"> il <input name="birthday"> <br></p>
+        <p>residente a <input name="city"> in via <input name="street">,n <input name="number">,<br></p>
+        <p>email <input name="email"></p>
+
+        <p align="center">DICHIARO <br><br>
+            <ul>
+        <li>di avere preso visione del modulo informativo concernente il Progetto di ricerca:<br><br>
+            <b>Studio 1. Le preferenze degli allevatori trentini per l’utilizzo di olii essenziali nelle diete animali</b>
+            <br><br>
+            <b>Studio 2. La percezione degli allevatori trentini sull'efficacia degli olii essenziali</b>
+        </li>
+<br>
+        <li>che le finalità, le modalità di svolgimento e i rischi dello studio mi sono stati illustrati in maniera chiara e dettagliata da Claudia Magnapera;</li>
+<br>
+        <li>di aver avuto modo di esporre le mie considerazioni e di domandare ulteriori precisazioni, nonché di avere avuto il tempo necessario per prendere una decisione spontanea, ponderata e non sollecitata;</li>
+<br>
+        <li>di aver compreso che i dati raccolti in questa sede sono intesi a puro scopo di ricerca e di poter prendere visione dei dati raccolti. Alla pubblicazione dello studio, i dati forniti saranno rielaborati in forma anonima e aggregata;</li>
+<br>
+        <li>di sapere che posso ritirarmi dallo studio in ogni momento senza dover fornire spiegazioni;</li>
+<br>
+        <li>che il consenso da me espresso circa la partecipazione allo studio sopracitato è una libera decisione, non influenzata da promesse di benefici economici o di altra natura, né da obblighi nei confronti del Ricercatore responsabile dello studio.</li>
+        </ul>
+
+        </p>
+
+        <p>Pertanto, sono consapevole delle attività previste e delle modalità di una mia adesione. </p>
+
+
+        <p>{{ formfield 'consent'}}</p>
+        <p>{{ formfield 'consent2' }}</p>
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.text-bottom{
+    vertical-align: bottom;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+}
+
+td {
+  height: 50px;
+  vertical-align: middle;
+}
+
+.img-fluid-2{
+    height: 300px;
+    width: auto;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+<!--            <h5 class="card-title">Se seleziona "Acquistare gli oli essenziali e {{ if participant.treatment == "RBS" }}-->
+<!--                ricevere <u>un sussidio basato sul risultato</u>{{ else }} ricevere <u>un pagamento dalla vendita dei crediti di carbonio</u>-->
+<!--                {{ endif }}"-->
+<!--            </h5>-->
+        </div>
+        <div class="card-body">
+
+        <table class="table">
+            <thead>
+                <tr align="center">
+                    <td><b>Di acquistare gli olii essenziali e ricevere
+                        {{ if participant.treatment == "RBS"}} un sussidio basato sui risultati
+                        {{ else }} un pagamento dalla vendita dei crediti di carbonio {{endif}}</b></td>
+                    <td colspan="2"></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr align="center">
+                    <td>
+                        <img class="img-fluid-2" src= "{{static 'visionary/mpl_ex_7.png' }}"/>
+                        <div class="alert alert-secondary" role="alert">Il mio reddito sarà pari a una somma compresa
+                            <br><b>tra 19,762 € e 20,237 €</b></div>
+                    </td>
+                    <td colspan="2">
+                        <div class="alert alert-secondary" align="justify">
+                            <ul>
+                                <li>Per determinare il suo reddito agricolo finale, bisogna <b>conoscere la riduzione</b> delle emissioni di metano nella sua azienda</li><br>
+                                <li>Ogni riduzione delle emissioni di metano ha una <b>probabilità</b> di verificarsi ad un
+                                    anno di utilizzo degli olii essenziali. Queste probabilità sono state calcolate
+                                    sulla base della letteratura e delle previsioni degli esperti.</li><br>
+                                <li style="visibility: hidden;">Gli <b>esperti</b> sono: ricercatori specializzati in zootecnia, specialisti in alimentazione animale, produttori di additivi zootecnici e veterinari.</li><br>
+                                <li style="visibility: hidden;">Sulla base di queste probabilità, <b>simuleremo</b> una di queste riduzioni per determinare il suo reddito aziendale.</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.img-fluid{
+    height: 30%;
+    width: 30%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Opzione A - Acquisto e sussidio standard</h5>
+        </div>
+        <div class="card-body">
+          <p align="justify">Può accettare di ricevere un sussidio standard che copre una parte dei costi (barra gialla).
+              Supponiamo che il sussidio copra l'85% di essi, pari a 1.118 €.</p>
+
+        <p align="justify">In questo caso, il reddito finale della vostra azienda alla fine dell'anno sarà pari a
+            19,803 €.</p>
+        <p align="center"><img class="img-fluid" src= "{{static 'visionary/mpl_ex_2.png' }}"/></p>
+
+
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

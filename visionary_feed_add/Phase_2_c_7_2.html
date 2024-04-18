@@ -1,0 +1,60 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.table-wrap{
+    width: 50%;
+    margin: auto;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+        </div>
+        <div class="card-body">
+            <p align="justify">Supponiamo che abbia scelto di "<b>non acquistare gli olii essenziali</b>".</p>
+        <div class="table-wrap" align="center">
+            <table class="table table-light table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <td colspan="3" align="center">Le chiediamo di scegliere se preferisce:</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="center">
+                        <th scope="col">A</th>
+                        <th scope="col">B</th>
+                        <th scope="col">C</th>
+                    </tr>
+                    <tr align="center">
+                        <td>Acquistare gli olii essenziali e ricevere un sussidio tradizionale</td>
+                        <td>Acquistare gli olii essenziali e ricevere
+                            <u><b>una combinazione di un pagamento fisso e
+                            {{ if participant.treatment == "RBS" }}
+                            sussidio basato sui risultati
+                            {{ else }}
+                            pagamento dalla vendita dei crediti di carbonio
+                            {{ endif }}</b></u>
+                        </td>
+                        <td style="background-color: aquamarine;">Non acquistare gli olii essenziali</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

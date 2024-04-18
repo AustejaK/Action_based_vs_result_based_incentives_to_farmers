@@ -1,0 +1,49 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.img-fluid{
+    height: 100%;
+    width: 100%;
+}
+
+.bordered{
+  border: 2px solid red;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"><b>Fase 2</b></h5>
+        </div>
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td style="width: 400px;">
+                            <img class="img-fluid" src= "{{static 'visionary/pm_ex_4.png' }}"/>
+                        </td>
+                        <td colspan="2">
+                            <div class="alert alert-secondary" align="center" style="width: 800px;">
+                                <b>Per esempio:</b></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

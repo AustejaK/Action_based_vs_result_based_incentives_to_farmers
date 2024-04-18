@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.img-fluid{
+    height: 50%;
+    width: 50%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"></h5>
+        </div>
+        <div class="card-body">
+          <p align="center">Nella Fase 1, Le mostreremo <b>sette schede di scelta</b>. </p>
+
+          <div class="alert alert-secondary">
+              <p align="center">Queste sette schede di scelta <b>differiscono solo per l'importo del sussidio standard</b> offerto. </p>
+        </div>
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

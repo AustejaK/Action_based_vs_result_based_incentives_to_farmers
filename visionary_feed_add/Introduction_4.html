@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"><b>La sua partecipazione</b></h5>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li>Questo incontro si compone di due parti: <b>Studio 1</b> e <b>Studio 2</b>.</li><br>
+                <li>Per ringraziarla della sua partecipazione, Le offriamo una <b>carta regalo</b> che potrà utilizzare in tutti i negozi Poli del Trentino. </li><br>
+                <li>Precisamente, riceverà una carta regalo dal valore di <b>10€</b> nello <b>Studio 1</b> ed un carta regalo dal valore di <b>10€</b> nello <b>Studio 2</b>.</li><br>
+                <li>Tuttavia, è possibile ottenere un <b>bonus aggiuntivo</b> sulla carta regalo compreso tra <b>0€ e 15€</b> in ognuno dei due studi. </li><br>
+                <li>Quindi potrà ricevere due carte regalo dal valore complessivo compreso tra <b>20€ e 50€</b>.</li><br>
+                <li><b>Importante</b>: potrà ricevere le carte regalo solo se completa entrambi gli studi di quest’incontro. </li>
+            </ul>
+
+<!--        <div class="card-footer text-right">-->
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

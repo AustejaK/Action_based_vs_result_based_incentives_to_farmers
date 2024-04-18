@@ -1,0 +1,118 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Domande di comprensione</h5>
+        </div>
+        <div class="card-body">
+
+        <p align="justify">1. A quanto ammonta
+            {{ if participant.treatment == "RBS" }} il sussidio basato sul risultato
+            {{ else }}
+            i crediti di carbonio
+            {{ endif }}
+            scegliendo  l'opzione <b>"acquistare olio essenziale e {{ if participant.treatment == "RBS" }}
+                ricevere sussidi basati sui risultati{{ else }} ricevere pagamento dalla vendita dei crediti di carbonio {{endif}}"</b>?</p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td align="center"><b>Scelgo</b></td>
+                    <td></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr align="center">
+                    <td>
+                        <p><b>Di acquistare gli oli essenziali e ricevere un sussidio standard (75%)</b></p><br>
+                        <img class="img-fluid" src= "{{static 'visionary/mpl_ex_6.png' }}" style="height:257px"/>
+                        <p>Il mio reddito sarà pari a 19,671 €</p>
+                    </td>
+                    <td>
+                        <p><b>Di acquistare gli oli essenziali e ricevere
+                        {{ if participant.treatment == "RBS"}} un sussidio basato sul risultato
+                        {{ else }} crediti di carbonio {{endif}}</b></p><br>
+                        <img class="img-fluid-2" src= "{{static 'visionary/mpl_ex_7.png' }}" style="height:257px"/>
+                        <p>Il mio reddito sarà pari a una somma compresa tra 19.762 € e 20.238 €</p>
+
+
+                    </td>
+                    <td><b>Di non acquistare gli oli essenziali</b></td>
+                </tr>
+                <tr>
+                    <td align="center"> <input type="radio" name="styles" id="default2" disabled></td>
+                    <td align="center"> <img class="img" src= "{{static 'visionary/option.png' }}" style="height:50px"/></td>
+                    <td align="center"> <input type="radio" name="styles" id="default3" disabled></td>
+                </tr>
+            </tbody>
+        </table>
+            <br>
+            {{ if player.comprehension_1 == 1 }}
+            <p><input type="radio" name="styles" id="id1_1" checked> 1,315 €</p>
+                            <div class="alert-box alert-danger">
+                   <p><b>La risposta non è corretta</b>: L'importo dipende da quale dei sette intervalli viene estratto in modo casuale.</p>
+                </div>
+            <p><input type="radio" name="styles" id="id1_2" disabled>1,077 €</p>
+            <p><input type="radio" name="styles" id="id1_3" disabled>L'importo dipende da quale dei sette intervalli viene estratto in modo casuale.</p>
+            <p><input type="radio" name="styles" id="id1_4" disabled>Non so/non ricordo</p>
+            {{ elif player.comprehension_1 == 2 }}
+            <p><input type="radio" name="styles" id="id1_1" disabled> 1,315 €</p>
+            <p><input type="radio" name="styles" id="id1_2" checked>1,077 €</p>
+                            <div class="alert-box alert-danger">
+                   <p><b>La risposta non è corretta</b>: L'importo dipende da quale dei sette intervalli viene estratto in modo casuale.</p>
+                </div>
+
+            <p><input type="radio" name="styles" id="id1_3" disabled>L'importo dipende da quale dei sette intervalli viene estratto in modo casuale.</p>
+            <p><input type="radio" name="styles" id="id1_4" disabled>Non so/non ricordo</p>
+
+            {{ elif player.comprehension_1 == 3 }}
+            <p><input type="radio" name="styles" id="id1_1" disabled> 1,315 €</p>
+            <p><input type="radio" name="styles" id="id1_2" disabled>1,077 €</p>
+
+
+            <p><input type="radio" name="styles" id="id1_3" checked>L'importo dipende da quale dei sette intervalli viene estratto in modo casuale.</p>
+                                        <div class="alert-box alert-success">
+                   <p><b>La risposta è corretta</b></p>
+                </div>
+            <p><input type="radio" name="styles" id="id1_4" disabled>Non so/non ricordo</p>
+
+
+            {{ else }}
+            <p><input type="radio" name="styles" id="id1_1" disabled> 1,315 €</p>
+            <p><input type="radio" name="styles" id="id1_2" disabled>1,077 €</p>
+
+
+            <p><input type="radio" name="styles" id="id1_3" disabled>L'importo dipende da quale dei sette intervalli viene estratto in modo casuale.</p>
+            <p><input type="radio" name="styles" id="id1_4" checked>Non so/non ricordo</p>
+                            <div class="alert-box alert-danger">
+                   <p><b>La risposta non è corretta</b>: L'importo dipende da quale dei sette intervalli viene estratto in modo casuale.</p>
+                </div>
+
+            {{ endif }}
+            <p>
+
+
+            </p>
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

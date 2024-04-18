@@ -1,0 +1,51 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.alert {
+    display: none;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Studio 1</h5>
+        </div>
+        <div class="card-body">
+            <p align="center">Ha completato 2 fasi nel corso nello Studio 1.</p>
+            <p align="center">Clicchi sul pulsante qui sotto per estrarre a caso una delle due fasi da usare per calcolare il suo bonus aggiuntivo.
+            </p>
+            <div align="center">
+                <button id="btn1" type="button"  onclick="showAlert()" style="font-size:20px;border: 2px solid #f44336; border-radius: 12px">CLICCA SUL PULSANTE</button>
+            </div>
+            <br>
+            <div class="alert alert-secondary" id="myAlert">
+                <h5 align="center"><b> La fase estratta a caso è: <u>{{player.study1phase}}</u> </b></h5>
+                 <div align="center"><button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                     <span style="font-size:12pt">Avanti</span>
+            </div>
+
+        </div>
+        <div class="card-footer text-center">
+
+             </button>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    function showAlert() {
+        var alertDiv = document.getElementById("myAlert");
+        alertDiv.style.display = "block";
+    }
+
+</script>
+
+{% endblock %}

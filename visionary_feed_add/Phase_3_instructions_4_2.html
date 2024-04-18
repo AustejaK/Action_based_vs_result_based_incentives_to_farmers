@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Come viene calcolato il bonus aggiuntivo per questa attività?</h5>
+        </div>
+        <div class="card-body">
+        <p align="justify">
+            Il suo bonus dipende da quanto sono accurate le sue previsioni. In particolare da:
+            <ol>
+                <li>Come ha assegnato i gettoni nei vari intervalli.</li>
+                <li>La distribuzione di gettoni creata da noi basandosi su dati scientifici presenti in letteratura e sulle previsioni degli esperti. </li>
+        </ol>
+        </p>
+        <p align="justify">Nello specifico, se la sua distribuzione dei 70 gettoni negli intervalli da Lei
+            espressa corrisponderà <b>con una buona approssimazione</b> alla distribuzione di gettoni creata da noi basandosi su dati scientifici presenti in letteratura, allora riceverà €15.
+        </p>
+        <p align="justify"><b>Cosa significa buona approssimazione?</b> Per ogni intervallo ha un margine di errore del 10% rispetto alla vera distribuzione che vi permette di ottenere il compenso.
+        </p>
+        <p align="justify"> In ogni altro caso, riceverà €0.</p>
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

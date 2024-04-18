@@ -1,0 +1,68 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.card{
+    width: 1200px;
+    height: 80%;
+}
+
+td {
+  height: 50px;
+  vertical-align: middle;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Se seleziona "Acquistare gli oli essenziali e ricevere <u>un sussidio standard</u> (75%)"</h5>
+        </div>
+        <div class="card-body">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <td colspan="3" align="center"><b>Scelgo</b></td>
+                </tr>
+                <tr align="center">
+                    <td><b>Di acquistare gli oli essenziali e ricevere un sussidio standard (75%)</b></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr align="center">
+                    <td>
+                        <img class="img-fluid" src= "{{static 'visionary/mpl_ex_6.png' }}" style="height:350px"/>
+                        <div class="alert alert-secondary" role="alert">Il mio reddito sarà pari a <br><b>19,671 €</b> </div>
+
+                    </td>
+                    <td>
+                        <p align="center"><img class="img" src= "{{static 'visionary/mpl_ex_8.png' }}" style="height:150px"/></p>
+
+                    </td>
+                    <td colspan="2">
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

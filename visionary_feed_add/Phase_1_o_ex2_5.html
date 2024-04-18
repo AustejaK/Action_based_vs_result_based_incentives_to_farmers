@@ -1,0 +1,97 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+
+}
+
+.card{
+    width: 1200px;
+    height: 80%;
+}
+
+.img-fluid{
+    width: 100%;
+    height: 100%;
+}
+
+.text-bottom{
+    vertical-align: bottom;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+}
+
+td {
+  height: 50px;
+  vertical-align: middle;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Se seleziona "Acquistare gli oli essenziali e {{ if participant.treatment == "RBS" }}
+                ricevere <u>un sussidio basato sul risultato</u>{{ else }} ricevere <u>un pagamento dalla vendita dei crediti di carbonio</u>
+                {{ endif }}"
+            </h5>
+        </div>
+        <div class="card-body">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <td colspan="3" align="center"><b>Scelgo</b></td>
+                </tr>
+                <tr align="center">
+                    <td><b>Di acquistare gli oli essenziali e ricevere
+                        {{ if participant.treatment == "RBS"}} un sussidio basato sul risultato
+                        {{ else }} crediti di carbonio {{endif}}</b></td>
+                    <td colspan="2"></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr align="center">
+                    <td>
+                        <img class="img-fluid-2" src= "{{static 'visionary/mpl_ex_3b.png' }}" style="height:350px"/>
+                        <div class="alert alert-secondary" role="alert">Il mio reddito sarà pari a 20,000 €.
+                            </div>
+                    </td>
+                    <td colspan="2">
+                        <div class="alert alert-light" align="justify">
+                            <p align="center">Per essempio</p>
+                            <p align="justify">Se, per esempio, la riduzione delle emissioni di metano fosse pari
+                                a 219,12 tonnellate (colonna D), allora
+                                {{ if participant.treatment == "RBS" }}
+                                il sussidio basato sui risultati
+                                {{ else }}
+                                il pagamento dalla vendita dei crediti di carbonio
+                                {{ endif }}
+                                genererà un’entrata pari a 1.315 €</p>
+
+                                {{ if participant.treatment == "RBS" }}
+                        <p align="center"><img class="img-fluid" src= "{{static 'visionary/mpl_ex_5_rbs.png' }}"/>
+                                {{ else }}
+                        <p align="center"><img class="img-fluid" src= "{{static 'visionary/mpl_ex_5_cc.png' }}"/>
+                                {{ endif }}
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

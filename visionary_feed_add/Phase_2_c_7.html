@@ -1,0 +1,95 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+    margin-top: -2.5%;
+}
+
+.img-fluid{
+    height: 50%;
+    width: 50%;
+}
+
+.img-fluid-2{
+    height: 80%;
+    width: 80%;
+}
+
+.img-fluid-3{
+    height: 50%;
+    width: 50%;
+}
+
+.fixed-width{
+    width: 55%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+<!--            <h5 class="card-title">Opzione B - -->
+<!--                {{ if participant.treatment == "RBS" }}-->
+<!--                Acquisto e sussidio basato sui risultati-->
+<!--                {{ else }}-->
+<!--                Acquisto e credito di carbonio-->
+<!--                {{ endif }}-->
+<!--            </h5>-->
+        </div>
+
+        <div class="card-body">
+            <p align="justify">Per esempio, diciamo che la riduzione corrispondente a <b>E</b> è la più probabile.</p>
+            <p align="justify">Questo significa che riceverà un pagamento di <b>
+                {{ if player.policy_mix_1 == 10 }}1,347
+                {{ elif player.policy_mix_1 == 30 }}1,252
+                {{ elif player.policy_mix_1 == 50 }}1,157
+                {{ endif }} €
+                 </b> dalla combinazione di
+                strumenti e il suo reddito agricolo finale sarà
+                <b>
+                {{ if player.policy_mix_1 == 10 }}20,032
+                {{ elif player.policy_mix_1 == 30 }}19,937
+                {{ elif player.policy_mix_1 == 50 }}19,842
+                {{ endif }} €
+                    €</b>:</p>
+
+        <table>
+            <tr>
+                <td class="fixed-width">
+                     <p align="center">
+                         {{ if player.policy_mix_1 == 10 }}
+                         <img class="img-fluid" src= "{{static 'visionary/distribution_10_90.png' }}"/>
+                         {{ elif player.policy_mix_1 == 30 }}
+                         <img class="img-fluid" src= "{{static 'visionary/distribution_30_70.png' }}"/>
+                         {{ else }}
+                         <img class="img-fluid" src= "{{static 'visionary/distribution_50_50.png' }}"/>
+                         {{ endif }}
+                     </p>
+                </td>
+                <td>
+                         {{ if player.policy_mix_1 == 10 }}
+                         <img class="img-fluid-2" src= "{{static 'visionary/pm_distribution_pay_10_90.png' }}"/>
+                         {{ elif player.policy_mix_1 == 30 }}
+                         <img class="img-fluid-2" src= "{{static 'visionary/pm_distribution_pay_30_70.png' }}"/>
+                         {{ else }}
+                         <img class="img-fluid-2" src= "{{static 'visionary/pm_distribution_pay_50_50.png' }}"/>
+                         {{ endif }}
+                </td>
+            </tr>
+        </table>
+
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"> Parte 3</h5>
+        </div>
+        <div class="card-body">
+            <p class="justify">3. Ora vorremmo conoscere la sua opinione su un'ampia gamma di <b>questioni ambientali</b>.
+                Per ciascuna delle seguenti affermazioni, la preghiamo di indicare in che misura è d'accordo o in
+                disaccordo. Ogni voce è accompagnata da quattro categorie di risposta: "Fortemente
+                disaccordo", "Leggermente disaccordo", “Né in disaccordo nè d’accordo”,
+                 "Leggermente d'accordo" e "Fortemente d'accordo".</p>
+            <table class="table-bordered">
+                <tr align="center">
+                    <td></td>
+                    <td><b>&nbsp;Fortemente disaccordo&nbsp;</b></td>
+                    <td><b>&nbsp;Leggermente disaccordo&nbsp;</b></td>
+                    <td><b>&nbsp;Né in disaccordo nè d’accordo&nbsp;</b></td>
+                    <td><b>&nbsp;Leggermente d'accordo&nbsp;</b></td>
+                    <td><b>&nbsp;Fortemente d'accordo&nbsp;</b></td>
+                </tr>
+                <tr align="center">
+                    <td>Ci stiamo avvicinando al limite del numero di persone che la Terra può sostenere.</td>
+                    {{ for field in form.nep1 }}
+                    <td>{{field}}</td>
+                    {{ endfor }}
+                </tr>
+                <tr align="center">
+                    <td>Quando gli esseri umani interferiscono con la natura, spesso ne derivano conseguenze disastrose.</td>
+                    {{ for field in form.nep2 }}
+                    <td>{{field}}</td>
+                    {{ endfor }}
+                </tr>
+                <tr align="center">
+                    <td>Le piante e gli animali hanno gli stessi diritti degli esseri umani di esistere.</td>
+                    {{ for field in form.nep3 }}
+                    <td>{{field}}</td>
+                    {{ endfor }}
+                </tr>
+                <tr align="center">
+                    <td>La Terra è come un'astronave con spazio e risorse limitate.</td>
+                    {{ for field in form.nep4 }}
+                    <td>{{field}}</td>
+                    {{ endfor }}
+                </tr>
+                <tr align="center">
+                    <td>Gli esseri umani sono destinati a dominare il resto della natura.</td>
+                    {{ for field in form.nep5 }}
+                    <td>{{field}}</td>
+                    {{ endfor }}
+                </tr>
+                <tr align="center">
+                    <td>L'equilibrio della natura è molto delicato e si altera facilmente.</td>
+                    {{ for field in form.nep6 }}
+                    <td>{{field}}</td>
+                    {{ endfor }}
+                </tr>
+                <tr align="center">
+                    <td>Se le cose continuano a seguire il corso attuale, presto si verificherà una grande catastrofe ecologica.</td>
+                    {{ for field in form.nep7 }}
+                    <td>{{field}}</td>
+                    {{ endfor }}
+                </tr>
+
+
+
+
+            </table>
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}

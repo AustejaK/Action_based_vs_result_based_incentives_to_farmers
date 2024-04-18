@@ -1,0 +1,44 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+<!--            <h5 class="card-title">Opzione B - -->
+<!--                {{ if participant.treatment == "RBS" }}-->
+<!--                Acquisto e sussidio basato sui risultati-->
+<!--                {{ else }}-->
+<!--                Acquisto e credito di carbonio-->
+<!--                {{ endif }}-->
+<!--            </h5>-->
+        </div>
+
+        <div class="card-body">
+            <p align="center">Molte sono le distribuzioni possibili:</p>
+
+                     <p align="center"><img class="img-fluid" src= "{{static 'visionary/distribution_5.png' }}" style="height:400px; widht:auto;"/></p>
+</div>
+            <h5 align="center"><u>Non Le diremo</u> quale tra le possibili distribuzioni useremo per determinare la riduzione di emissioni di metano.
+</h5>
+<br>
+        <h5 align="center">Le comunicheremo la riduzione alla fine dello studio.</h5>
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

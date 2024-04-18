@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"></h5>
+        </div>
+      <div class="card-body" align="center">
+          <h2>Indagine sulle opinioni e le preferenze degli allevatori trentini sull’utilizzo di olii essenziali</h2>
+          <p align="center"><img class="img-fluid-2" src= "{{static 'visionary/sponsors.png' }}" style="height:300px;"/></p>
+      </div>
+
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

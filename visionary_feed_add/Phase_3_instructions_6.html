@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.img-fluid-2{
+    height: 70%;
+    width: 70%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+        </div>
+        <div class="card-body">
+        <p align="justify"><b>Esempio 2</b>. Se, però, la distribuzione espressa da Lei (in verde) <b>non
+            corrisponde con buona approssimazione</b> alla distruzione di gettoni creata da noi (in blu), basandosi su
+            dati scientifici e adattata alle previsioni degli esperti, riceverà 0€.</p>
+            <p align="center"><img class="img-fluid-2" src= "{{static 'visionary/emissions_1.png' }}"/></p>
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

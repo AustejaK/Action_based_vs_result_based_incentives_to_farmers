@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.img-fluid-2{
+    height: 300px;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"><b>Studio 2</b></h5>
+        </div>
+        <div class="card-body">
+            <h5 align="center">Lo studio si compone di due fasi:</h5>
+            <p align="center"><img class="img-fluid-2" src= "{{static 'visionary/study_2.png' }}"/></p>
+            <div class="alert alert-secondary" role="alert" align="justify">
+                <ul>
+                    <li>Nella <b>Fase 1</b>, Le chiederemo di fare delle <b>previsioni</b> sull'efficacia degli olii essenziali
+                        nel ridurre le emissioni di metano negli allevamenti bovini.</li><br>
+                    <li>Nella <b>Fase 2</b>, Le chiederemo di rispondere ad un <b>questionario</b>.</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

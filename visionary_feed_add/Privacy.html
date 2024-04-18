@@ -1,0 +1,70 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+    margin-top: -2.5%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"> INFORMATIVA SUL TRATTAMENTO DEI DATI PERSONALI</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text" align="justify">
+            Il Regolamento (UE) 2016/679 “Regolamento Generale sulla protezione dei dati personali” (d’ora in avanti “GDPR”) sancisce il diritto di ogni persona alla protezione dei dati di carattere personale che la riguardano.  Ai sensi dell’art. 13 del Regolamento UE 2016/679 l’Università degli Studi di Trento intende fornire le seguenti informazioni.
+            <br><br>
+            <b>TITOLARE DEL TRATTAMENTO </b><br>
+            Il Titolare del trattamento è l’Università degli Studi di Trento, via Calepina n. 14, 38122 Trento (TN); email: ateneo@pec.unitn.it; ateneo@unitn.it.
+            <br><br>
+            <b>CONTATTI DEL RESPONSABILE DELLE PROTEZIONE DATI  </b><br>
+            Il Responsabile della protezione dei dati (RDP) può essere contattato al seguente indirizzo: rpd@unitn.it.
+            <br><br>
+            <b>FINALITA’  DEL TRATTAMENTO E BASE GIURIDICA</b><br>
+            Il trattamento dei dati personali è effettuato per la realizzazione delle finalità scientifiche illustrate nella nota informativa di partecipazione al seguente Progetto di ricerca composto da due studi:
+                <br><b>Studio 1. Le preferenze degli allevatori trentini per l’utilizzo di olii essenziali nelle diete animali</b>.
+                <br>
+                <b>Studio 2. La percezione degli allevatori trentini sull'efficacia degli olii essenziali</b>
+                <br>
+                Il Titolare tratta i dati personali nell’ambito di esecuzione dei propri compiti di interesse pubblico (art. 6, 1 par., lett. e) del GDPR) e, in particolare, per la finalità di comprovare il suo consenso alla partecipazione al progetto di ricerca in oggetto.
+            <br><br>
+            <b>NATURA DEL CONFERIMENTO DEI DATI </b><br>
+            Il conferimento dei dati personali è indispensabile per la partecipazione al progetto di ricerca e il mancato conferimento determina l’impossibilità di parteciparvi.
+            <br><br>
+            <b>MODALITA’ DEL TRATTAMENTO </b><br>
+            Il trattamento dei dati personali viene effettuato con modalità informatizzata da parte di personale autorizzato al trattamento dei dati in relazione ai compiti e alle mansioni assegnate e nel rispetto dei principi di liceità, correttezza, trasparenza, adeguatezza, pertinenza, necessità e riservatezza  nonché dei principi di privacy by design e by default (artt. 5 e 25 GDPR). (art. 5, par.1 GDPR).
+            <br><br>
+            <b>DIVULGAZIONE DEI RISULTATI DELLA RICERCA</b><br>
+            La divulgazione dei risultati statistici e/o scientifici (ad esempio mediante pubblicazione di articoli scientifici e/o la creazione di banche dati, anche con modalità ad accesso aperto, partecipazione a convegni, ecc.) potrà avvenire soltanto in forma anonima e/o aggregata e comunque secondo modalità che non rendano identificabile l’interessato.
+            <br><br>
+            <b>CATEGORIE DEI DESTINATARI </b><br>
+            I dati personali non saranno comunicati a soggetti terzi.
+            <br><br>
+            <b>PERIODO DI CONSERVAZIONE DEI DATI</b><br>
+            I dati personali saranno conservati per il periodo necessario alla realizzazione della finalità sopra indicata e comunque per il tempo stabilito dalla normativa vigente e dalla regolamentazione di Ateneo in tema di gestione e conservazione della documentazione prodotta dall’Università nello svolgimento della propria attività istituzionale.
+            <br><br>
+            <b>DIRITTI DEGLI INTERESSATI </b><br>
+            In ogni momento gli interessati potranno esercitare nei confronti del Titolare, ai contatti sopra indicati, i diritti sanciti dagli artt. 15 e ss. del GDPR ovvero l’accesso ai propri dati personali, la rettifica e la loro integrazione ove siano incompleti e, nei casi in cui ciò sia previsto dalla normativa, la limitazione, la cancellazione, il diritto di opposizione al trattamento e il diritto di revoca.
+            <br><br>
+            Resta salvo il diritto degli interessati di proporre reclamo all’Autorità Garante per la protezione dei dati personali ai sensi dell’art. 77 del GDPR o di adire le opportune sedi giudiziarie qualora ritengono che il trattamento dei loro dati avvenga in violazione della disciplina vigente in materia di protezione dei dati personali.
+            <br><br>
+            Per informazioni relative al trattamento dei dati effettuato nel Progetto di ricerca può rivolgersi al Responsabile scientifico del Progetto, Prof Simone Cerroni al seguente recapito: Email: simone.cerroni@unitn.it, tel. 0461 282372.
+            </p>
+
+            <p>{{formfields}}</p>
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

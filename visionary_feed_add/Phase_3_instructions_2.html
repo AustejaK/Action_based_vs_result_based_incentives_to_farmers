@@ -1,0 +1,48 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+img {
+  border: 3px solid #555;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"><b>Compenso per lo studio 2</b></h5>
+        </div>
+        <div class="card-body">
+            <p align="justify">Come detto in precedenza, Lei riceverà una carta regalo dal valore di <b>10 €</b>
+                per ringraziarla della partecipazione allo Studio 2. </p>
+
+            <div class="alert alert-secondary" role="alert">
+
+            <p align="center"><b>Come viene determinato il bonus aggiuntivo?</b></p>
+
+            <p align="justify">Nella <b>Fase 1</b>, desideriamo conoscere la sua opinione personale sull'efficacia
+                degli oli essenziali nel ridurre le emissioni di metano a livello aziendale.</p>
+
+            <p align="justify">In questa Fase, potrà ottenere un <b>bonus</b> aggiuntivo da <b>0</b> a <b>15 €</b>
+                sulla base della precisione delle sue previsioni. </p>
+            </div>
+            <p align="justify">Le ricordiamo che riceverà il compenso relativo allo Studio 1 e allo Studio 2 solo <b>al termine</b> dell’incontro di oggi.</p>
+            <p align="justify">La <b>Fase 2</b> inizierà subito dopo la Fase 1 e al termine di essa, vedrà a quanto ammonta il suo compenso.</p>
+            <p align="justify">Se non ha domande, può chiudere la videochiamata al <b>termine</b> della fase 2. La contatteremo per il pagamento in seguito.</p>
+            <p align="justify">La ringraziamo per il suo tempo.</p>
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

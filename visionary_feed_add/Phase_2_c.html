@@ -1,0 +1,63 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+    margin-top: -2.5%;
+}
+
+.img-fluid{
+    height: 350px;
+    width: auto;
+}
+
+.table-wrap{
+    width: 50%;
+    margin: auto;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+<!--            <h5 class="card-title"><b>Fase 2</b></h5>-->
+        </div>
+        <div class="card-body">
+            <p align="justify"><u>Facciamo un esempio del nuovo strumento</u>:</p>
+            <p align="justify">
+                {{ if participant.treatment == 'RBS' }}
+                In questo esempio, le mostreremo una combinazione composta per il <b>{{player.policy_mix_1}}%</b> da un pagamento fisso e per il
+                <b>{{pm}}%</b> da un sussidio basato sui risultati.
+                {{ else }}
+In questo esempio, le mostreremo una combinazione composta per il <b>{{player.policy_mix_1}}%</b> da un pagamento
+                fisso e per il <b>{{pm}}%</b> da un pagamento dalla vendita dei crediti di carbonio
+                {{ endif }}
+            </p>
+        <br>
+        <p align="center"><b>Aggiungendo la parte variabile (barre blu), si ha la combinazione:</b></p>
+        <p align="center">
+            {{ if player.policy_mix_1 == 10 }}
+            <img class="img-fluid" src= "{{static 'visionary/pm_10_90.png' }}"/>
+            <img class="img-fluid" src= "{{static 'visionary/pie_10_90.png' }}" style="height:150px;"/>
+            {{ elif player.policy_mix_1 == 30}}
+            <img class="img-fluid" src= "{{static 'visionary/pm_30_70.png' }}"/>
+            <img class="img-fluid" src= "{{static 'visionary/pie_30_70.png' }}" style="height:150px;"/>
+            {{else}}
+            <img class="img-fluid" src= "{{static 'visionary/pm_50_50.png' }}"/>
+            <img class="img-fluid" src= "{{static 'visionary/pie_50_50.png' }}" style="height:150px;"/>
+            {{endif}}
+            </p>
+
+        </div>
+
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

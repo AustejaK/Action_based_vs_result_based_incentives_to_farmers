@@ -1,0 +1,154 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"> Parte 3</h5>
+        </div>
+        <div class="card-body">
+            <p align="justify">4. Per ciascuno dei seguenti settori, La preghiamo di indicare in che misura è <b>disposto a
+                correre rischi</b>. Il valore <b>0</b> sta per "<b>per nulla disposto a correre un rischio</b>" e il
+                valore <b>10</b> per "<b>molto disposto a correre un rischio</b>"</p>
+
+                <table class="table-bordered">
+                    <tr align="justify">
+                        <td><b>Produzione</b> (per esempio, nuove pratiche di allevamento per aumentare potenzialmente la produzione di latte)</td>
+                        <td>
+                            <table>
+                                <tr align="center">
+                                   <td>Per nulla</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Molto</td>
+                                </tr>
+                                <tr align="center">
+                                    <td></td>
+                                    {{ for field in form.risk1}}
+                                    <td>&nbsp;&nbsp;{{field}}&nbsp;&nbsp;</td>
+                                    {{ endfor }}
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr align="justify">
+                        <td><b>Mercato e prezzi</b> (per esempio, esplorare nuove strategie di marketing sui prodotti e raggiungere nuovi mercati)</td>
+                        <td>
+                            <table>
+                                <tr align="center">
+                                   <td>Per nulla</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Molto</td>
+                                </tr>
+                                <tr align="center">
+                                    <td></td>
+                                    {{ for field in form.risk2}}
+                                    <td>&nbsp;&nbsp;{{field}}&nbsp;&nbsp;</td>
+                                    {{ endfor }}
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr align="justify">
+                        <td><b>Finanziamenti esterni</b> (per esempio, prestiti per l’acquisto di nuovi terreni, o di attrezzature agricole)</td>
+                        <td>
+                            <table>
+                                <tr align="center">
+                                   <td>Per nulla</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Molto</td>
+                                </tr>
+                                <tr align="center">
+                                    <td></td>
+                                    {{ for field in form.risk3}}
+                                    <td>&nbsp;&nbsp;{{field}}&nbsp;&nbsp;</td>
+                                    {{ endfor }}
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr align="justify">
+                        <td><b>Agricoltura in generale</b> (tutte le precedenti)</td>
+                        <td>
+                            <table>
+                                <tr align="center">
+                                   <td>Per nulla</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Molto</td>
+                                </tr>
+                                <tr align="center">
+                                    <td></td>
+                                    {{ for field in form.risk4}}
+                                    <td>&nbsp;&nbsp;{{field}}&nbsp;&nbsp;</td>
+                                    {{ endfor }}
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+    margin-top:-2.5%;
+}
+
+.text-bottom{
+    vertical-align: bottom;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+}
+
+.alert{
+    margin-bottom: 0px;
+    padding: 2px;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-body">
+            <div class="alert alert-info">
+                <p align="center">
+                      Le chiediamo di confrontare sempre <b>l'importo</b> che si può ottenere dal sussidio tradizionale con <b>l'importo</b> che si può ottenere dal
+                    {{ if participant.treatment == "RBS" }}sussidio basato sui risultati{{else}}pagamento dalla vendita dei crediti di carbonio{{endif}}.
+                <br><br>
+                    <b>Ad esempio</b>, in questa scheda di scelta, il sussidio tradizionale consiste di un <b>importo inferiore</b> rispetto al {{ if participant.treatment == "RBS" }}sussidio basato sui risultati{{else}}pagamento dalla vendita dei crediti di carbonio{{endif}} anche nel peggiore scenario di riduzione del metano.
+
+                </p>
+            </div>
+            <table class="table">
+            <thead>
+                <tr>
+                    <td colspan="3" align="center"><b>Scelgo</b></td>
+                </tr>
+                <tr align="center">
+                    <td><b>Di acquistare gli olii essenziali e ricevere un sussidio tradizionale (75%)</b></td>
+                    <td><b>Di acquistare gli olii essenziali e ricevere
+                        {{ if participant.treatment == "RBS"}} un sussidio basato sui risultati
+                        {{ else }} un pagamento dalla vendita dei crediti di carbonio {{endif}}</b></td>
+                    <td><b>Di non acquistare gli olii essenziali</b></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr align="center">
+                    <td>
+                        <img class="img-fluid" src= "{{static 'visionary/mpl_ss_75_2.png' }}" style="height:300px"/>
+                        <div class="alert alert-secondary" role="alert">Il mio reddito sarà pari a <br><b>19,671 €</b> </div>
+
+                    </td>
+                    <td>
+                        <img class="img-fluid-2" src= "{{static 'visionary/mpl_ex_7_2.png' }}" style="height:300px"/>
+                        <div class="alert alert-secondary" role="alert">Il mio reddito sarà pari a una somma compresa
+                            <br><b>tra 19,762 € e 20,237 €</b></div>
+                    </td>
+                    <td>
+                        <img class="img-fluid-2" src= "{{static 'visionary/mpl_opt_out.png' }}" style="height:300px"/>
+                        <div class="alert alert-secondary" role="alert">Il mio reddito rimarrà <br><b>20,000 €</b></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

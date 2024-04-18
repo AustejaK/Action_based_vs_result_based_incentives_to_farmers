@@ -1,0 +1,36 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"> Introduzione</h5>
+        </div>
+        <div class="card-body">
+            <ul <p align="justify">
+                <li>Ci sono diversi modi per rafforzare <b>l’immagine verde</b> della zootecnia trentina e per
+            creare <b>nuove opportunità di mercato</b>.</li>
+            </ul>
+            <p align="center"><img class="img-fluid" src= "{{static 'visionary/strategies.png' }}" style="height:300px"/></p>
+
+            <ul>
+                <li>Una strategia non esclude l’altra, infatti si possono attuare più strategie contemporaneamente.
+                </li>
+            </ul>
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

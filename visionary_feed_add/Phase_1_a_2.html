@@ -1,0 +1,39 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"><b>Oli essenziali</b></h5>
+        </div>
+        <div class="card-body">
+
+<div class="alert alert-dark" role="alert">
+    <p>
+        <ul>
+            <li>Gli <b><u>oli essenziali</u></b> sono additivi zootecnici certificati per la riduzione delle emissioni
+                enteriche di metano nei bovini da latte.</li><br>
+            <li>Sono costituiti da una miscela di estratti vegetali microincapsulati.</li><br>
+        </ul>
+    </p>
+
+</div>
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

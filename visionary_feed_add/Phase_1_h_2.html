@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 60%;
+}
+
+.img-fluid{
+    width: 40%
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"></h5>
+        </div>
+        <div class="card-body">
+            <p align="jusitfy">In media un’azienda zootecnica in Trentino:</p>
+            <p align="justify">
+                <ul>
+                    <li>ha <b>22 vacche da latte</b></li>
+                    <p align="justify"><img class="img-fluid" src= "{{static 'visionary/arrow.png' }}" style="height:50px; width:auto;"/></p>
+                    <li>Un dosaggio annuale di olii essenziali costa <b>1,315 €</b></li>
+                </ul>
+            </p>
+
+            <br>
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

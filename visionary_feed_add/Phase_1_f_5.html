@@ -1,0 +1,49 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Domanda</h5>
+        </div>
+        <div class="card-body">
+        {{ if participant.treatment == "RBS" }}
+            <p align="justify">Preferirebbe acquistare gli olii essenziali e ricevere un sussidio standard oppure un sussidio basato sui risultati?</p>
+            {{ else }}
+            <p align="justify">Preferirebbe acquistare gli olii essenziali e ricevere un sussidio standard oppure un pagamento dalla vendita dei crediti di carbonio?</p>
+            {{ endif }}
+
+            <table>
+                {{ for choice in form.opinion_ss_vs_rbs_cc }}
+                <tr>
+                    <td>{{ choice }}</td>
+                    {{ if forloop.counter == 1 }}
+                    <td>&nbsp; sussidio standard</td>
+                    {{ elif forloop.counter == 2 }}
+                    <td> &nbsp; {{ if participant.treatment == "RBS" }} sussidio basato sui risultati
+                        {{ else }}pagamento dalla vendita dei crediti di carbonio
+                        {{ endif }}
+                    </td>
+                    {{ endif }}
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"></h5>
+        </div>
+        <div class="card-body">
+        <p align="justify">Secondo la letteratura e gli esperti, la <b>riduzione delle emissioni</b> di metano può rientrare in uno qualsiasi
+            dei sette intervalli seguenti, che variano da una riduzione minima del 6,6% a una riduzione massima del 10%:</p>
+
+        <table class="table table-striped table-bordered">
+          <tbody>
+            <tr align="center">
+                <th scope="col">A</th>
+                <th scope="col">B</th>
+                <th scope="col">C</th>
+                <th scope="col">D</th>
+                <th scope="col">E</th>
+                <th scope="col">F</th>
+                <th scope="col">G</th>
+            </tr>
+            <tr align="center">
+                <th scope="col">6.6%, 7%</th>
+                <th scope="col">7.1%, 7.5%</th>
+                <th scope="col">7.6%, 8%</th>
+                <th scope="col">8.1%, 8.5%</th>
+                <th scope="col">8.6%, 9%</th>
+                <th scope="col">9.1%, 9.5%</th>
+                <th scope="col">9.6%, 10%</th>
+            </tr>
+          </tbody>
+        </table>
+        <p align="justify">Per esprimere la sua previsione, avrà a disposizione <b>70 gettoni</b> e dovrà allocarli tra i
+            diversi intervalli inserendo il numero di gettoni nelle apposite caselle di ciascuna
+            colonna corrispondente all'intervallo, secondo la seguente intuizione:</p>
+
+            <p align="justify">
+                <b>Maggiore è il numero di gettoni assegnati ad un intervallo, maggiore è la probabilità che quell’intervallo si verifichi in futuro secondo Lei.</b>
+            </p>
+        <p align="justify">Tutti i 70 gettoni devono essere allocati.</p>
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

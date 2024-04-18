@@ -1,0 +1,60 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+.container{
+    max-width: 90%;
+}
+
+.img-fluid{
+    height: 300px;
+    width: auto;
+}
+
+.img-fluid-2{
+    height: 200px;
+    width: auto;
+}
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">
+                {{ if participant.treatment == "RBS" }} Sussidio basato sui risultati {{ else }}
+                Crediti di carbonio {{ endif }} </h5>
+        </div>
+        <div class="card-body">
+            <p align="center"><img class="img-fluid" src= "{{static 'visionary/rb_instrument_a.png' }}"/>
+                <img class="img-fluid-2" src= "{{static 'visionary/contract.png' }}"/>
+            </p>
+
+            {{ if participant.treatment == "RBS" }}
+
+            <p align="center">Se decide di utilizzare gli olii essenziali, un consulente aziendale qualificato visiterà la sua
+                    azienda e calcolerà un <b>livello di emissioni di base</b> senza alcun costo aggiuntivo.</p>
+
+            <p align="center">La prima visita implica la stipula di un <b>contratto</b>, in cui è stabilito l'importo del sussidio per
+                    ogni tonnellata di metano ridotta, pari a <b><u>6 €</u></b>.
+
+            {{ else }}
+
+            <p align="center">Se decide di utilizzare gli olii essenziali, un consulente aziendale qualificato visiterà la sua
+                    azienda e calcolerà un <b>livello di emissioni di base</b> senza alcun costo aggiuntivo.</p>
+
+            <p align="center">La prima visita implica la stipula di un contratto, in cui è stabilito il prezzo per
+                ogni credito di carbonio, pari a <b>6 €</b>.
+
+            {{ endif }}
+
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}
